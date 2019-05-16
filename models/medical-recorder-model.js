@@ -2,17 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const medicalRecorderSchema = new Schema({
-  imageUrl: { type: String, required: false },
-  name: { type: String, required: true },
-  surname: { type: String, required: true },
+  fullname: { type: String, required: true },
   age: { type: Number, required: true },
   genere: { type: String, required: true },
-
-  chronicDiseases: { type: String, required: true },
-  familiarDiseases: { type: String, required: true },
-  medicalTreatments: { type: String, required: true },
-
-  descriptionClinical: { type: String, required: true },
+  chronicdiseases: { type: String },
+  familiardiseases: { type: String },
+  medicaltreatments: { type: String },
+  description: { type: String, required: true },
   medicines: { type: String, required: true },
 })
 

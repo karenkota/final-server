@@ -13,11 +13,11 @@ router.get('/medicalRecorder', (req, res, next) => {
     .catch(err => next(err))
 })
 
-// create in mongo
-router.post('/medicalRecorder/create', (req, res, next) => { 
+// create in mongo - 
+router.post('/NewMedicalRecorder/create', (req, res, next) => { 
   medicalRecorder.create(req.body)
-    .then( aNewMedicalRecorder => {
-        res.status(200).json(aNewmedicalRecorder);
+    .then( response => {
+        res.status(200).json(response);
     })
     .catch( err => next(err) );
 });
