@@ -76,5 +76,7 @@ app.use(cors({
 
 const authRoutes = require('./routes/auth-routes');
 app.use('/api', authRoutes);
+app.use('/api', require('./routes/medical-recorder-route'));
+app.use('/api', require('./routes/file-upload-route'));
 
 module.exports = app;
