@@ -5,11 +5,14 @@ const medicalRecorderSchema = new Schema({
   fullname: { type: String, required: true },
   age: { type: Number, required: true },
   genere: { type: String, required: true },
+  phone: { type: Number, required: true },
+  adress: { type: String, required: true },
   chronicdiseases: { type: String },
   familiardiseases: { type: String },
   medicaltreatments: { type: String },
   description: { type: String, required: true },
   medicines: { type: String, required: true },
+  upload: { type: String }
 })
 
 const medicalRecorder = mongoose.model('medicalRecorder', medicalRecorderSchema);
