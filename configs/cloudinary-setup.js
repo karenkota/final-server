@@ -11,11 +11,11 @@ cloudinary.config({
 
 var storage = cloudinaryStorage({
   cloudinary,
-  folder: 'medical-recorder', // The name of the folder in cloudinary
-  allowedFormats: ['jpg', 'png', 'doc', 'pdf', 'jpeg', 'txt', 'mp3', 'mp4', 'avi'],
-  params: { resource_type: 'raw' }, //=> this is in case you want to upload other type of files, not just images
+  folder: 'medical-recorder', 
+  allowedFormats: ['jpg', 'png', 'jpeg', 'avi', 'mp4', 'wmv'],
+  resource_type: ['image', 'video'], 
   filename: function (req, res, cb) {
-    cb(null, res.originalname); // The file on cloudinary would have the same name as the original file name
+    cb(null, res.originalname);
   }
 });
 
