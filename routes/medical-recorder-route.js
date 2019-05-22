@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const medicalRecorder = require('../models/medical-recorder-model');
+const mongoose = require ('mongoose');
 
 
 router.get('/medicalRecorder', (req, res, next) => {
@@ -28,7 +29,6 @@ router.post('/NewMedicalRecorder/create', (req, res, next) => {
 });
 
 router.put('/MedicalRecorder/edit/:id', (req, res, next) => { 
-  console.log(req.body)
   medicalRecorder.findOneAndUpdate({_id: req.params.id}, req.body)
    .then((response) => {
       res.status(200).json(response);
