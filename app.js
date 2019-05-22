@@ -75,8 +75,10 @@ app.use(cors({
 // ROUTES MIDDLEWARE STARTS HERE:
 
 const authRoutes = require('./routes/auth-routes');
+const email = require('./routes/sac-route');
 app.use('/api', authRoutes);
 app.use('/api', require('./routes/medical-recorder-route'));
 app.use('/api', require('./routes/file-upload-route'));
+app.use('/api', email)
 
 module.exports = app;

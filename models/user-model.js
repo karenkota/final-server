@@ -5,8 +5,8 @@ const userSchema = new Schema({
   username: String,
   password: String,
   CRM: Number,
-  // assignature: ,
-  // specialist: ,
+  specialist: String ,
+  assignature: String
 }, 
 {
   timestamps: true
