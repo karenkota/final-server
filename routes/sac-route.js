@@ -15,11 +15,11 @@ router.post('/send-email', (req, res, next) => {
     }
   });
   transporter.sendMail({
-    from: email,
+    from: 'orchestra.medicalgroup@hotmail.com',
     to: 'orchestra.medicalgroup@hotmail.com',
     subject: `Sac ${name}`,
     text: "",
-    html: `<p>${message}</p>`
+    html: `<p>${name} ${email} ${message}</p>`
   })
   .then(info => res.status(200).json({ message: "send email", info }))
   .catch(error => console.log(error));
