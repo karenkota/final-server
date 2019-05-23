@@ -3,9 +3,7 @@ const router  = express.Router();
 const sac = require('../models/sac-model');
 const nodemailer = require('nodemailer');
 
-router.post('/send-email', (req, res, next) => { 
-  console.log(`@@@@@@@@@@`,req.body);
-  
+router.post('/send-email', (req, res, next) => {  
   let { name, email, message } = req.body;  
   let transporter = nodemailer.createTransport({
     service: 'Hotmail',
