@@ -41,7 +41,10 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
-      
+
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
