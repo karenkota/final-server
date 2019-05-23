@@ -43,7 +43,7 @@ app.use(require('node-sass-middleware')({
 }));
 
 app.use((req, res, next) => {
-  res.sendFile(__dirname + "/public/build/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.set('views', path.join(__dirname, 'views'));
