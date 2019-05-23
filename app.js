@@ -65,7 +65,7 @@ const cors = require('cors');
 
 app.use(cors({
   credentials: true,
-  origin: ['http://localhost:3000'] // <== this will be the URL of our React app (it will be running on port 3000)
+  origin: ['http://localhost:3000', 'https://orchestramedicalgroup.herokuapp.com'] // <== this will be the URL of our React app (it will be running on port 3000)
 }));
 
 
