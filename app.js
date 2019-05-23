@@ -41,10 +41,6 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 
-app.use((req, res, next) => {
-  res.sendFile(__dirname + "/public/index.html");
-});
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -81,5 +77,9 @@ app.use('/api', authRoutes);
 app.use('/api', require('./routes/medical-recorder-route'));
 app.use('/api', require('./routes/file-upload-route'));
 app.use('/api', email)
+
+app.use((req, res, next) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 module.exports = app;
