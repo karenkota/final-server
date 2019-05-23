@@ -4,8 +4,9 @@ const sac = require('../models/sac-model');
 const nodemailer = require('nodemailer');
 
 router.post('/send-email', (req, res, next) => { 
-  let { name, email, message } = req.body;
-  console.log(`dlspdlps[ds[plp[]]]`, name, email, message)
+  console.log(`@@@@@@@@@@`,req.body);
+  
+  let { name, email, message } = req.body;  
   let transporter = nodemailer.createTransport({
     service: 'Hotmail',
     auth: {
@@ -16,8 +17,9 @@ router.post('/send-email', (req, res, next) => {
   transporter.sendMail({
     from: email,
     to: 'orchestra.medicalgroup@hotmail.com',
-    subject: `Sac ${name} `,
-    text: message,
+    subject: `Sac ${name}`,
+    text: "",
+    html: `<p>${message}</p>`
   })
   .then(info => res.status(200).json({ message: "send email", info }))
   .catch(error => console.log(error));

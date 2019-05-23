@@ -6,7 +6,6 @@ const userSchema = new Schema({
   password: String,
   CRM: Number,
   specialist: String ,
-  assignature: String
 }, 
 {
   timestamps: true
